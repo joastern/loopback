@@ -125,8 +125,9 @@ describe('remoting - integration', function() {
         'findOne(filter:object):store GET /stores/findOne',
         'updateAll(where:object,data:object):object POST /stores/update',
         'deleteById(id:any):object DELETE /stores/:id',
+        'replaceById(id:any,data:object):store PUT /stores/:id',
         'count(where:object):number GET /stores/count',
-        'prototype.updateAttributes(data:object):store PUT /stores/:id',
+        'prototype.updateAttributes(data:object):store PATCH /stores/:id',
         'createChangeStream(options:object):ReadableStream POST /stores/change-stream',
       ];
 
