@@ -116,6 +116,8 @@ describe('remoting - integration', function() {
           return formatMethod(m);
         });
 
+      // TODO: This is the list of expected default endpoints
+      // for LB 2.X (They are different for LB 3.X)
       var expectedMethods = [
         'create(data:object):store POST /stores',
         'upsert(data:object):store PUT /stores',
@@ -126,6 +128,7 @@ describe('remoting - integration', function() {
         'updateAll(where:object,data:object):object POST /stores/update',
         'deleteById(id:any):object DELETE /stores/:id',
         'replaceById(id:any,data:object):store PATCH /stores/:id',
+        'replaceOrCreate(data:object):store PATCH /stores',
         'count(where:object):number GET /stores/count',
         'prototype.updateAttributes(data:object):store PUT /stores/:id',
         'createChangeStream(options:object):ReadableStream POST /stores/change-stream',
