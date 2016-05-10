@@ -117,24 +117,20 @@ describe('remoting - integration', function() {
         });
 
       // TODO: This is the list of expected default endpoints
-      // for LB 2.X (They are different for LB 3.X)
+      // for LB 3.X (They are different for LB 2.X)
       var expectedMethods = [
-        'create(data:object):store POST /stores', // 2.X
-        // 'upsert(data:object):store PATCH /stores', // 3.X
-        'upsert(data:object):store PUT /stores',
+        'create(data:object):store POST /stores',
+        'upsert(data:object):store PATCH /stores',
+        'replaceOrCreate(data:object):store PUT /stores',
         'exists(id:any):boolean GET /stores/:id/exists',
         'findById(id:any,filter:object):store GET /stores/:id',
+        'replaceById(id:any,data:object):store PUT /stores/:id',
         'find(filter:object):store GET /stores',
         'findOne(filter:object):store GET /stores/findOne',
         'updateAll(where:object,data:object):object POST /stores/update',
         'deleteById(id:any):object DELETE /stores/:id',
-        'replaceById(id:any,data:object):store PATCH /stores/:id', // 2.X
-        // 'replaceById(id:any,data:object):store PUT /stores/:id', // 3.X
-        'replaceOrCreate(data:object):store PATCH /stores', // 2.X
-        // 'replaceOrCreate(data:object):store PUT /stores', // 3.X
         'count(where:object):number GET /stores/count',
-        'prototype.updateAttributes(data:object):store PUT /stores/:id', // 2.X
-        // 'prototype.updateAttributes(data:object):store PATCH /stores/:id', // 3.X
+        'prototype.updateAttributes(data:object):store PATCH /stores/:id',
         'createChangeStream(options:object):ReadableStream POST /stores/change-stream',
       ];
 
