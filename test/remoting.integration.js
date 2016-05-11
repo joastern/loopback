@@ -116,7 +116,7 @@ describe('remoting - integration', function() {
           return formatMethod(m);
         });
 
-      // TODO: This is the list of expected default endpoints
+      // This is the list of expected default endpoints
       // for LB 3.X (They are different for LB 2.X)
       var expectedMethods = [
         'create(data:object):store POST /stores',
